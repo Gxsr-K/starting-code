@@ -1291,6 +1291,7 @@ input:checked + .slider-round:before {
   /* HINT: Use padding-right and background-color */
   padding-right: 15px;
   background-color: var(--secondary);
+  
 
 }
 
@@ -1325,13 +1326,15 @@ input:checked + .slider-round:before {
   position: fixed;
   top: 20px;
   right: 20px;
-  z-index: 1001;
+  z-index: 1000;
   padding: 10px 15px;
   background-color: var(--primary);
   color: var(--white);
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
   cursor: pointer;
+  transition: var(--transition);
 }
 
 .color-option {
@@ -1410,6 +1413,7 @@ input:checked + .slider-round:before {
 }
 
 /* Responsive Design */
+
 @media (max-width: 768px) {
   /* TODO: Add responsive styles for mobile */
   /* HINT: Adjust component-grid, btn-group, nav, and tab-header */
@@ -1433,7 +1437,12 @@ input:checked + .slider-round:before {
     /* Make tab links stack vertically */
     flex-direction: column;
   }
+
+  .container {
+    padding: 10px;
+  }
 }
+
 
 /* ========== PRESERVED WIDGET STYLES ========== */
 
@@ -1628,4 +1637,13 @@ input:checked + .slider-round:before {
 
 .dark-theme .instruction-section p:last-child {
   background-color: rgba(76, 201, 240, 0.1);
+}
+@media (min-width: 690px) and (max-width: 1200px) {
+.mini-calendar {
+ 
+  width: 90%;
+  margin: 0 auto;
+
+  grid-template-columns: repeat(5, 1fr);
+}
 }
