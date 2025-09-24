@@ -23,6 +23,7 @@
   --text-color: #212529;
   --border-color: #e9ecef;
   --comment-color: #239a23;
+  --my-color: #123456;
 }
 
 body {
@@ -170,6 +171,7 @@ border-radius: 5px;
   border-radius: 5px;
   cursor: pointer;
   transition: var(--transition);
+  margin: 5px 0;
 }
 
 .btn:hover {
@@ -316,36 +318,69 @@ border-radius: 5px;
 .switch-container {
   /* TODO: Add switch container styles */
   /* HINT: Use display, align-items, and margin */
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
 }
 
 .switch {
   /* TODO: Add switch styles */
   /* HINT: Use position, display, width, height, and margin-right */
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  margin-right: 10px;
 }
 
 .switch input {
   /* TODO: Add switch input styles */
   /* HINT: Use opacity, width, and height */
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 .slider-round {
   /* TODO: Add slider round styles */
   /* HINT: Use position, cursor, top/left/right/bottom properties, background-color, transition, and border-radius */
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--light-gray);
+  transition: var(--transition);
+  border-radius: 34px;
+
 }
 
 .slider-round:before {
   /* TODO: Add slider round before element styles */
   /* HINT: Use position, content, height, width, left, bottom, background-color, transition, and border-radius */
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--white);
+  transition: var(--transition);
+  border-radius: 50%;
 }
 
 input:checked + .slider-round {
   /* TODO: Add checked slider round styles */
   /* HINT: Change background-color */
+  background-color: var(--primary);
+  
 }
 
 input:checked + .slider-round:before {
   /* TODO: Add checked slider round before element styles */
   /* HINT: Use transform with translateX */
+  transform: translateX(26px);
 }
 
 /* List Styles */
@@ -948,6 +983,7 @@ input:checked + .slider-round:before {
 .tab-pane {
   /* TODO: Add tab pane styles */
   /* HINT: Use display property */
+  display: none;
  
   
 }
@@ -955,6 +991,7 @@ input:checked + .slider-round:before {
 .tab-pane.active {
   /* TODO: Add styles for active tab pane */
   /* HINT: Change display */
+  display: block;
   
   
 }
@@ -1328,11 +1365,13 @@ input:checked + .slider-round:before {
 .widget {
   /* TODO: Add widget styles */
   /* HINT: Use background-color, border-radius, box-shadow, padding, display, and transition */
+
   background-color: var(--card-bg);
   border-radius: 10px;
   box-shadow: var(--card-shadow);
   padding: 20px;
   display: flex;
+  align-items: center;
   transition: var(--transition);
 }
 
@@ -1340,7 +1379,8 @@ input:checked + .slider-round:before {
   /* TODO: Add hover styles for widgets */
   /* HINT: Use transform and box-shadow */
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(0, 0,0, 0.2);
+
 }
 
 .widget i {
@@ -1349,17 +1389,24 @@ input:checked + .slider-round:before {
   font-size: 2rem;
   color: var(--primary);
   margin-right: 15px;
+ 
 }
 
 .widget-content {
   /* TODO: Add widget content styles */
   /* HINT: Use flex property */
   flex: 1;
+
+
 }
 
 .widget h3 {
   /* TODO: Add widget heading styles */
   /* HINT: Use margin-top, margin-bottom, color, and font-size */
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: var(--primary);
+  
 }
 
 /* Responsive Design */
@@ -1369,18 +1416,22 @@ input:checked + .slider-round:before {
 
   .component-grid {
     /* Change grid to single column */
+    grid-template-columns: 1fr;
   }
 
   .btn-group {
     /* Stack buttons vertically */
+    flex-direction: column;
   }
 
   .nav {
     /* Make nav items stack vertically */
+    flex-direction: column;
   }
 
   .tab-header {
     /* Make tab links stack vertically */
+    flex-direction: column;
   }
 }
 
