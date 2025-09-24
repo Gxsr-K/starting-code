@@ -1441,6 +1441,9 @@ input:checked + .slider-round:before {
   .container {
     padding: 10px;
   }
+  .panel-toggle {
+display: none;
+}
 }
 
 
@@ -1645,5 +1648,11 @@ input:checked + .slider-round:before {
   margin: 0 auto;
 
   grid-template-columns: repeat(5, 1fr);
+}
+
+}
+@media (max-width: 1400px) {
+  .panel-toggle {
+display: none;
 }
 }
